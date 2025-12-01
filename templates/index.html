@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RecoverAI | Athlete Injury Recovery Prediction</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <i class="fas fa-heartbeat"></i>
+                <span>RecoverAI</span>
+            </a>
+            <div class="nav-links">
+                <a href="/" class="active"><i class="fas fa-home"></i> Home</a>
+                <a href="/about"><i class="fas fa-info-circle"></i> About</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-brain"></i>
+                <span>AI-Powered Recovery Analysis</span>
+            </div>
+            <h1>Athlete Injury<br><span class="gradient-text">Recovery Prediction</span></h1>
+            <p class="hero-subtitle">Advanced machine learning model to predict recovery timelines and provide personalized rehabilitation recommendations for athletes</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-icon"><i class="fas fa-bolt"></i></span>
+                    <span class="stat-label">Smart Recovery</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-icon"><i class="fas fa-shield-heart"></i></span>
+                    <span class="stat-label">Injury Prevention</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-icon"><i class="fas fa-chart-line"></i></span>
+                    <span class="stat-label">Data-Driven Insights</span>
+                </div>
+            </div>
+            <a href="#prediction-form" class="cta-button">
+                <span>Start Recovery Assessment</span>
+                <i class="fas fa-arrow-down"></i>
+            </a>
+        </div>
+        <div class="hero-visual">
+            <div class="athlete-card">
+                <div class="card-glow"></div>
+                <img src="https://images.unsplash.com/photo-1597452485669-2c7bb5fef90d?w=400&h=500&fit=crop" alt="Athlete Recovery" class="athlete-image">
+                <div class="card-overlay">
+                    <div class="pulse-ring"></div>
+                    <i class="fas fa-hand-holding-medical"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content" id="prediction-form">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="section-header">
+                <span class="section-tag"><i class="fas fa-clipboard-list"></i> Recovery Assessment</span>
+                <h2>Enter Athlete <span class="gradient-text">Parameters</span></h2>
+                <p>Complete all fields to receive an accurate recovery timeline prediction</p>
+            </div>
+
+            <!-- Prediction Form -->
+            <form id="injuryForm" class="prediction-form">
+                <!-- Personal Information -->
+                <div class="form-section">
+                    <div class="section-title">
+                        <i class="fas fa-user"></i>
+                        <h3>Personal Information</h3>
+                    </div>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="age">
+                                <i class="fas fa-birthday-cake"></i>
+                                Age (years)
+                            </label>
+                            <input type="number" id="age" name="age" min="15" max="60" required placeholder="e.g., 25">
+                            <span class="input-hint">Range: 15-60 years</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="gender">
+                                <i class="fas fa-venus-mars"></i>
+                                Gender
+                            </label>
+                            <select id="gender" name="gender" required>
+                                <option value="">Select Gender</option>
+                                <option value="0">Female</option>
+                                <option value="1">Male</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="height">
+                                <i class="fas fa-ruler-vertical"></i>
+                                Height (cm)
+                            </label>
+                            <input type="number" id="height" name="height" min="140" max="220" step="0.1" required placeholder="e.g., 175">
+                            <span class="input-hint">Range: 140-220 cm</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="weight">
+                                <i class="fas fa-weight"></i>
+                                Weight (kg)
+                            </label>
+                            <input type="number" id="weight" name="weight" min="40" max="150" step="0.1" required placeholder="e.g., 70">
+                            <span class="input-hint">Range: 40-150 kg</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="bmi">
+                                <i class="fas fa-calculator"></i>
+                                BMI
+                            </label>
+                            <input type="number" id="bmi" name="bmi" min="15" max="45" step="0.1" required placeholder="Auto-calculated">
+                            <span class="input-hint">Calculated automatically</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Training Information -->
+                <div class="form-section">
+                    <div class="section-title">
+                        <i class="fas fa-dumbbell"></i>
+                        <h3>Training Information</h3>
+                    </div>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="training_frequency">
+                                <i class="fas fa-calendar-week"></i>
+                                Training Frequency (days/week)
+                            </label>
+                            <input type="number" id="training_frequency" name="training_frequency" min="1" max="7" required placeholder="e.g., 5">
+                            <span class="input-hint">Sessions per week</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="training_duration">
+                                <i class="fas fa-clock"></i>
+                                Training Duration (minutes)
+                            </label>
+                            <input type="number" id="training_duration" name="training_duration" min="15" max="300" required placeholder="e.g., 90">
+                            <span class="input-hint">Per session</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="warmup_time">
+                                <i class="fas fa-fire"></i>
+                                Warm-up Time (minutes)
+                            </label>
+                            <input type="number" id="warmup_time" name="warmup_time" min="0" max="60" required placeholder="e.g., 15">
+                            <span class="input-hint">Before training</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="training_intensity">
+                                <i class="fas fa-bolt"></i>
+                                Training Intensity (1-10)
+                            </label>
+                            <input type="number" id="training_intensity" name="training_intensity" min="1" max="10" step="0.1" required placeholder="e.g., 7">
+                            <span class="input-hint">Self-rated scale</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Physical Metrics -->
+                <div class="form-section">
+                    <div class="section-title">
+                        <i class="fas fa-heartbeat"></i>
+                        <h3>Physical Metrics</h3>
+                    </div>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="flexibility_score">
+                                <i class="fas fa-child"></i>
+                                Flexibility Score (1-10)
+                            </label>
+                            <input type="number" id="flexibility_score" name="flexibility_score" min="1" max="10" step="0.1" required placeholder="e.g., 6">
+                        </div>
+                        <div class="form-group">
+                            <label for="muscle_asymmetry">
+                                <i class="fas fa-balance-scale"></i>
+                                Muscle Asymmetry (%)
+                            </label>
+                            <input type="number" id="muscle_asymmetry" name="muscle_asymmetry" min="0" max="30" step="0.1" required placeholder="e.g., 5">
+                            <span class="input-hint">Left-right difference</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="injury_history">
+                                <i class="fas fa-notes-medical"></i>
+                                Previous Injuries (count)
+                            </label>
+                            <input type="number" id="injury_history" name="injury_history" min="0" max="20" required placeholder="e.g., 2">
+                            <span class="input-hint">In career</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recovery & Wellness -->
+                <div class="form-section">
+                    <div class="section-title">
+                        <i class="fas fa-spa"></i>
+                        <h3>Recovery & Wellness</h3>
+                    </div>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="sleep_hours">
+                                <i class="fas fa-bed"></i>
+                                Sleep Hours (per night)
+                            </label>
+                            <input type="number" id="sleep_hours" name="sleep_hours" min="4" max="12" step="0.1" required placeholder="e.g., 7.5">
+                        </div>
+                        <div class="form-group">
+                            <label for="recovery_time">
+                                <i class="fas fa-hourglass-half"></i>
+                                Recovery Time (hours)
+                            </label>
+                            <input type="number" id="recovery_time" name="recovery_time" min="12" max="72" required placeholder="e.g., 48">
+                            <span class="input-hint">Between sessions</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="stress_level">
+                                <i class="fas fa-brain"></i>
+                                Stress Level (1-10)
+                            </label>
+                            <input type="number" id="stress_level" name="stress_level" min="1" max="10" required placeholder="e.g., 4">
+                            <span class="input-hint">Current mental stress</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="form-actions">
+                    <button type="submit" class="submit-button">
+                        <span class="button-content">
+                            <i class="fas fa-stethoscope"></i>
+                            <span>Predict Recovery Timeline</span>
+                        </span>
+                        <span class="button-loader">
+                            <i class="fas fa-spinner fa-spin"></i>
+                            <span>Analyzing...</span>
+                        </span>
+                    </button>
+                    <button type="reset" class="reset-button">
+                        <i class="fas fa-redo"></i>
+                        <span>Reset Form</span>
+                    </button>
+                </div>
+            </form>
+
+            <!-- Results Section -->
+            <div id="results" class="results-section" style="display: none;">
+                <div class="results-header">
+                    <span class="section-tag"><i class="fas fa-chart-pie"></i> Recovery Analysis</span>
+                    <h2>Recovery <span class="gradient-text">Prediction Results</span></h2>
+                </div>
+
+                <div class="results-content">
+                    <!-- Recovery Outlook Card -->
+                    <div class="outlook-card" id="outlookCard">
+                        <div class="outlook-icon">
+                            <i class="fas fa-heart-pulse"></i>
+                        </div>
+                        <div class="outlook-details">
+                            <span class="outlook-label">Recovery Outlook</span>
+                            <span class="outlook-value" id="recoveryOutlook">Excellent</span>
+                            <span class="outlook-timeline" id="recoveryTimeline">Estimated: 3-5 days</span>
+                        </div>
+                        <div class="confidence-badge">
+                            <span id="confidenceValue">95%</span>
+                            <span>Confidence</span>
+                        </div>
+                    </div>
+
+                    <!-- Probability Gauge -->
+                    <div class="gauge-container">
+                        <div class="gauge-wrapper">
+                            <h4><i class="fas fa-tachometer-alt"></i> Recovery Probability Analysis</h4>
+                            <div class="dual-gauge">
+                                <div class="gauge-item quick">
+                                    <svg viewBox="0 0 100 100" class="circular-gauge">
+                                        <circle cx="50" cy="50" r="45" fill="none" stroke="#1f2937" stroke-width="8"/>
+                                        <circle id="quickGauge" cx="50" cy="50" r="45" fill="none" stroke="#10b981" stroke-width="8" 
+                                                stroke-dasharray="283" stroke-dashoffset="283" stroke-linecap="round"
+                                                transform="rotate(-90 50 50)"/>
+                                    </svg>
+                                    <div class="gauge-center">
+                                        <span class="gauge-value" id="quickRecoveryProb">0%</span>
+                                        <span class="gauge-label">Quick Recovery</span>
+                                    </div>
+                                </div>
+                                <div class="gauge-item extended">
+                                    <svg viewBox="0 0 100 100" class="circular-gauge">
+                                        <circle cx="50" cy="50" r="45" fill="none" stroke="#1f2937" stroke-width="8"/>
+                                        <circle id="extendedGauge" cx="50" cy="50" r="45" fill="none" stroke="#f97316" stroke-width="8" 
+                                                stroke-dasharray="283" stroke-dashoffset="283" stroke-linecap="round"
+                                                transform="rotate(-90 50 50)"/>
+                                    </svg>
+                                    <div class="gauge-center">
+                                        <span class="gauge-value" id="extendedRecoveryProb">0%</span>
+                                        <span class="gauge-label">Extended Recovery</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Analysis Cards -->
+                    <div class="analysis-section">
+                        <h4><i class="fas fa-clipboard-check"></i> Factor Analysis</h4>
+                        <div class="analysis-grid" id="analysisGrid">
+                            <!-- Dynamically populated -->
+                        </div>
+                    </div>
+
+                    <!-- Recommendations -->
+                    <div class="recommendations-section">
+                        <h3><i class="fas fa-lightbulb"></i> Recovery Recommendations</h3>
+                        <ul id="recommendationsList" class="recommendations-list">
+                            <!-- Dynamically populated -->
+                        </ul>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="result-actions">
+                        <button class="action-btn primary" onclick="window.print()">
+                            <i class="fas fa-print"></i>
+                            <span>Print Report</span>
+                        </button>
+                        <button class="action-btn secondary" onclick="newAssessment()">
+                            <i class="fas fa-plus"></i>
+                            <span>New Assessment</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fas fa-star"></i> Features</span>
+                <h2>Why Choose <span class="gradient-text">RecoverAI</span></h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>High Precision</h3>
+                    <p>State-of-the-art ensemble model with optimized feature engineering for precise predictions</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Recovery Timeline</h3>
+                    <p>Get estimated recovery duration based on your unique athlete profile and training data</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h3>Expert Recommendations</h3>
+                    <p>Personalized rehabilitation advice to optimize your recovery process</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Injury Prevention</h3>
+                    <p>Identify risk factors early and take proactive measures to prevent future injuries</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="/" class="logo">
+                        <i class="fas fa-heartbeat"></i>
+                        <span>RecoverAI</span>
+                    </a>
+                    <p>AI-powered injury recovery prediction for athletes. Recover smarter, perform better.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="/">Home</a>
+                    <a href="/about">About</a>
+                    <a href="#prediction-form">Assessment</a>
+                </div>
+                <div class="footer-tech">
+                    <h4>Technology</h4>
+                    <div class="tech-badges">
+                        <span class="tech-badge"><i class="fab fa-python"></i> Python</span>
+                        <span class="tech-badge"><i class="fas fa-flask"></i> Flask</span>
+                        <span class="tech-badge"><i class="fas fa-robot"></i> Ensemble ML</span>
+                        <span class="tech-badge"><i class="fas fa-chart-line"></i> Scikit-learn</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 RecoverAI. Built with <i class="fas fa-heart"></i> for Athletes.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

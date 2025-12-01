@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | RecoverAI - Injury Recovery Prediction</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <i class="fas fa-heartbeat"></i>
+                <span>RecoverAI</span>
+            </a>
+            <div class="nav-links">
+                <a href="/"><i class="fas fa-home"></i> Home</a>
+                <a href="/about" class="active"><i class="fas fa-info-circle"></i> About</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Hero -->
+    <section class="about-hero">
+        <div class="container">
+            <div class="about-hero-content">
+                <span class="section-tag"><i class="fas fa-info-circle"></i> About Us</span>
+                <h1>Accelerating Recovery with <span class="gradient-text">AI Technology</span></h1>
+                <p>Learn how our advanced machine learning system predicts recovery timelines and helps athletes return to peak performance</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Content -->
+    <main class="about-content">
+        <div class="container">
+            <!-- Mission Section -->
+            <section class="about-section">
+                <div class="about-grid">
+                    <div class="about-text">
+                        <h2><i class="fas fa-bullseye"></i> Our Mission</h2>
+                        <p>RecoverAI was developed to revolutionize how athletes approach injury recovery. By leveraging advanced machine learning, we provide accurate predictions of recovery timelines and personalized rehabilitation recommendations.</p>
+                        <p>Our goal is to help athletes recover faster and smarter by identifying key factors that influence recovery duration and providing actionable insights to optimize the healing process.</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500&h=400&fit=crop" alt="Athlete Recovery">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Technology Section -->
+            <section class="about-section">
+                <h2 class="section-title-center">
+                    <i class="fas fa-cogs"></i> 
+                    The Technology Behind <span class="gradient-text">RecoverAI</span>
+                </h2>
+                
+                <div class="tech-cards">
+                    <div class="tech-card">
+                        <div class="tech-icon">
+                            <i class="fas fa-layer-group"></i>
+                        </div>
+                        <h3>Ensemble Learning</h3>
+                        <p>Our model combines multiple algorithms including Gradient Boosting, Random Forest, and SVM to achieve maximum accuracy and reliability in predictions.</p>
+                    </div>
+                    
+                    <div class="tech-card">
+                        <div class="tech-icon">
+                            <i class="fas fa-magic"></i>
+                        </div>
+                        <h3>Feature Engineering</h3>
+                        <p>Advanced feature engineering creates 15+ derived features including training load, recovery ratios, and risk indices for comprehensive analysis.</p>
+                    </div>
+                    
+                    <div class="tech-card">
+                        <div class="tech-icon">
+                            <i class="fas fa-balance-scale-right"></i>
+                        </div>
+                        <h3>SMOTE Balancing</h3>
+                        <p>Synthetic Minority Over-sampling Technique ensures the model learns equally well from all types of recovery outcomes.</p>
+                    </div>
+                    
+                    <div class="tech-card">
+                        <div class="tech-icon">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                        <h3>Feature Selection</h3>
+                        <p>SelectKBest algorithm identifies the 20 most predictive features from our engineered feature set for optimal model performance.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features Analyzed -->
+            <section class="about-section">
+                <h2 class="section-title-center">
+                    <i class="fas fa-list-check"></i> 
+                    Factors <span class="gradient-text">Analyzed</span>
+                </h2>
+                
+                <div class="features-analyzed">
+                    <div class="feature-category">
+                        <h4><i class="fas fa-user"></i> Personal Metrics</h4>
+                        <ul>
+                            <li><span>Age</span> - Years of age</li>
+                            <li><span>Gender</span> - Male/Female</li>
+                            <li><span>Height</span> - In centimeters</li>
+                            <li><span>Weight</span> - In kilograms</li>
+                            <li><span>BMI</span> - Body Mass Index</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-category">
+                        <h4><i class="fas fa-dumbbell"></i> Training Factors</h4>
+                        <ul>
+                            <li><span>Training Frequency</span> - Days per week</li>
+                            <li><span>Training Duration</span> - Minutes per session</li>
+                            <li><span>Warm-up Time</span> - Pre-training prep</li>
+                            <li><span>Training Intensity</span> - Self-rated 1-10</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-category">
+                        <h4><i class="fas fa-heartbeat"></i> Physical Condition</h4>
+                        <ul>
+                            <li><span>Flexibility Score</span> - Mobility rating</li>
+                            <li><span>Muscle Asymmetry</span> - Left-right balance</li>
+                            <li><span>Injury History</span> - Previous injuries</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-category">
+                        <h4><i class="fas fa-spa"></i> Recovery & Wellness</h4>
+                        <ul>
+                            <li><span>Sleep Hours</span> - Nightly rest</li>
+                            <li><span>Recovery Time</span> - Between sessions</li>
+                            <li><span>Stress Level</span> - Mental stress 1-10</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- How It Works Section -->
+            <section class="about-section">
+                <h2 class="section-title-center">
+                    <i class="fas fa-lightbulb"></i> 
+                    How It <span class="gradient-text">Works</span>
+                </h2>
+                
+                <div class="tech-cards">
+                    <div class="tech-card">
+                        <div class="tech-icon">
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
+                        <h3>1. Input Your Data</h3>
+                        <p>Enter your personal metrics, training details, and recovery factors into our comprehensive assessment form.</p>
+                    </div>
+                    
+                    <div class="tech-card">
+                        <div class="tech-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>2. AI Analysis</h3>
+                        <p>Our advanced machine learning model analyzes your data using 30+ engineered features for accurate prediction.</p>
+                    </div>
+                    
+                    <div class="tech-card">
+                        <div class="tech-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>3. Get Results</h3>
+                        <p>Receive your personalized recovery timeline, risk assessment, and tailored recommendations instantly.</p>
+                    </div>
+                    
+                    <div class="tech-card">
+                        <div class="tech-icon">
+                            <i class="fas fa-running"></i>
+                        </div>
+                        <h3>4. Optimize Recovery</h3>
+                        <p>Follow the expert recommendations to accelerate your recovery and get back to peak performance faster.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recovery Outlook Guide -->
+            <section class="about-section">
+                <h2 class="section-title-center">
+                    <i class="fas fa-calendar-check"></i> 
+                    Recovery Outlook <span class="gradient-text">Guide</span>
+                </h2>
+                
+                <div class="outlook-guide">
+                    <div class="outlook-item excellent">
+                        <div class="outlook-header">
+                            <i class="fas fa-check-circle"></i>
+                            <h4>Excellent (< 25% risk)</h4>
+                        </div>
+                        <p><strong>Timeline:</strong> 3-5 days</p>
+                        <p>Optimal recovery profile. Continue current practices and maintain good habits.</p>
+                    </div>
+                    <div class="outlook-item good">
+                        <div class="outlook-header">
+                            <i class="fas fa-thumbs-up"></i>
+                            <h4>Good (25-50% risk)</h4>
+                        </div>
+                        <p><strong>Timeline:</strong> 5-10 days</p>
+                        <p>Good recovery potential with minor optimizations. Focus on sleep and warm-up routines.</p>
+                    </div>
+                    <div class="outlook-item moderate">
+                        <div class="outlook-header">
+                            <i class="fas fa-exclamation-circle"></i>
+                            <h4>Moderate (50-75% risk)</h4>
+                        </div>
+                        <p><strong>Timeline:</strong> 10-21 days</p>
+                        <p>Proactive measures recommended. Consider reducing training frequency and intensity.</p>
+                    </div>
+                    <div class="outlook-item extended">
+                        <div class="outlook-header">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <h4>Extended (> 75% risk)</h4>
+                        </div>
+                        <p><strong>Timeline:</strong> 21-42 days</p>
+                        <p>Immediate action required. Consult sports medicine professional and prioritize rest.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="about-cta">
+                <div class="cta-content">
+                    <h2>Ready to Predict Your Recovery Timeline?</h2>
+                    <p>Get your personalized recovery assessment in seconds</p>
+                    <a href="/#prediction-form" class="cta-button">
+                        <span>Start Assessment</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="/" class="logo">
+                        <i class="fas fa-heartbeat"></i>
+                        <span>RecoverAI</span>
+                    </a>
+                    <p>AI-powered injury recovery prediction for athletes. Recover smarter, perform better.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="/">Home</a>
+                    <a href="/about">About</a>
+                    <a href="/#prediction-form">Assessment</a>
+                </div>
+                <div class="footer-tech">
+                    <h4>Technology</h4>
+                    <div class="tech-badges">
+                        <span class="tech-badge"><i class="fab fa-python"></i> Python</span>
+                        <span class="tech-badge"><i class="fas fa-flask"></i> Flask</span>
+                        <span class="tech-badge"><i class="fas fa-robot"></i> Ensemble ML</span>
+                        <span class="tech-badge"><i class="fas fa-chart-line"></i> Scikit-learn</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 RecoverAI. Built with <i class="fas fa-heart"></i> for Athletes.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
